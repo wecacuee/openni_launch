@@ -24,7 +24,8 @@
   <arg name="projector"        default="projector" />
 
   <!-- Driver nodelet -->
-  <node pkg="openni2_camera" type="openni2_camera_node" name="driver"
+  <node pkg="nodelet" type="nodelet" name="driver"
+	  args="load openni2_camera/OpenNI2DriverNodelet $(arg manager) $(arg bond)"
 	respawn="$(arg respawn)">
     <param name="device_id" value="$(arg device_id)" />
     <param name="rgb_camera_info_url"   value="$(arg rgb_camera_info_url)" />
